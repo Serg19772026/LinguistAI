@@ -223,15 +223,15 @@ const App: React.FC = () => {
           <div className="flex flex-col items-center w-full mt-4">
              <button onClick={() => { stopMic(); setAppState(AppState.SELECTING_SENTENCE); }} className="self-start text-slate-400 text-[9px] font-black mb-6 uppercase tracking-widest">← Back to list</button>
              <div className="bg-white rounded-[40px] p-8 w-full shadow-xl text-center relative border border-slate-50">
-                <div className={`text-[9px] font-black tracking-widest uppercase mb-8 ${isListening ? 'text-red-500 animate-pulse' : isCompleted ? 'text-emerald-500' : 'text-slate-300'}`}>
+                <div className={`text-[9px] font-black text-slate-500 tracking-widest uppercase mb-8 ${isListening ? 'text-red-500 animate-pulse' : isCompleted ? 'text-emerald-500' : 'text-slate-300'}`}>
                   {isSpeaking ? 'AI Voice' : isListening ? 'Listening' : isCompleted ? 'Success!' : 'Ready'}
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 mb-10">
                   {displayWords.map((word, idx) => (
-                    <span key={idx} className={`text-2xl md:text-3xl font-black transition-all duration-300 ${matchedIndices.has(idx) ? 'text-blue-600' : 'text-slate-100'}`}>{word}</span>
+                    <span key={idx} className={`text-2xl md:text-3xl font-black transition-all duration-300 ${matchedIndices.has(idx) ? 'text-blue-600' : 'text-slate-400'}`}>{word}</span>
                   ))}
                 </div>
-                {showTranslation && <p className="text-slate-400 font-bold italic mb-12 text-base opacity-80">"{currentSentence.translation}"</p>}
+                {showTranslation && <p className="text-slate-600 font-bold italic mb-12 text-base">"{currentSentence.translation}"</p>}
                 
                 <div className="flex flex-col items-center justify-center w-full">
                   <button onClick={handlePracticeFullSentence} disabled={isSpeaking} className={`w-24 h-24 rounded-3xl flex items-center justify-center transition-all duration-500 ${isSpeaking ? 'bg-slate-50 text-slate-200' : isListening ? 'bg-red-500 text-white shadow-lg' : isCompleted ? 'bg-emerald-500 text-white shadow-md' : 'bg-blue-600 text-white shadow-blue-200 shadow-lg active:scale-95'}`}>
@@ -244,7 +244,7 @@ const App: React.FC = () => {
                       <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
                     )}
                   </button>
-                  <p className="mt-8 text-[9px] font-black text-slate-300 uppercase tracking-widest">{isListening ? 'Speak now' : isCompleted ? 'Brilliant!' : 'Start'}</p>
+                  <p className="mt-8 text-[9px] font-black text-slate-600 uppercase tracking-widest">{isListening ? 'Speak now' : isCompleted ? 'Brilliant!' : 'Start'}</p>
                 </div>
              </div>
           </div>
