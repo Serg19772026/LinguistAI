@@ -225,9 +225,9 @@ const App: React.FC = () => {
              <div className="bg-white rounded-[40px] p-8 w-full shadow-xl text-center relative border border-slate-50">
                <div className={`text-[13px] font-black tracking-widest uppercase mb-8 transition-colors duration-300 ${
   isListening 
-    ? 'text-purple-600 animate-pulse' 
+    ? 'text-purple-800 animate-pulse' 
     : isCompleted 
-      ? 'text-green-600' 
+      ? 'text-green-900' 
       : 'text-orange-500'
 }`}>
   {isSpeaking ? 'AI Voice' : isListening ? 'Listening' : isCompleted ? 'Success!' : 'Ready'}
