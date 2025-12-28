@@ -221,9 +221,9 @@ const App: React.FC = () => {
 
         {appState === AppState.PRACTICING && (
           <div className="flex flex-col items-center w-full mt-4">
-             <button onClick={() => { stopMic(); setAppState(AppState.SELECTING_SENTENCE); }} className="self-start text-slate-400 text-[11px] font-purple mb-6 uppercase tracking-widest">← Back to list</button>
+             <button onClick={() => { stopMic(); setAppState(AppState.SELECTING_SENTENCE); }} className="self-start text-slate-300 text-[10px] font-black mb-6 uppercase tracking-widest">← Back to list</button>
              <div className="bg-white rounded-[40px] p-8 w-full shadow-xl text-center relative border border-slate-50">
-                <div className={`text-[13px] font-green text-slate-400 tracking-widest uppercase mb-8 ${isListening ? 'text-red-500 animate-pulse' : isCompleted ? 'text-emerald-600' : 'text-slate-300'}`}>
+                <div className={`text-[13px] font-blue text-slate-300 tracking-widest uppercase mb-8 ${isListening ? 'text-red-300 animate-pulse' : isCompleted ? 'text-emerald-800' : 'text-slate-300'}`}>
                   {isSpeaking ? 'AI Voice' : isListening ? 'Listening' : isCompleted ? 'Success!' : 'Ready'}
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 mb-10">
