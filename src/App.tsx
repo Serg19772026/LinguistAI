@@ -223,10 +223,16 @@ const App: React.FC = () => {
           <div className="flex flex-col items-center w-full mt-4">
              <button onClick={() => { stopMic(); setAppState(AppState.SELECTING_SENTENCE); }} className="self-start text-slate-300 text-[10px] font-black mb-6 uppercase tracking-widest">← Back to list</button>
              <div className="bg-white rounded-[40px] p-8 w-full shadow-xl text-center relative border border-slate-50">
-                <div className={`text-[13px] font-blue text-slate-300 tracking-widest uppercase mb-8 ${isListening ? 'text-red-300 animate-pulse' : isCompleted ? 'text-emerald-800' : 'text-slate-300'}`}>
-                  {isSpeaking ? 'AI Voice' : isListening ? 'Listening' : isCompleted ? 'Success!' : 'Ready'}
-                </div>
-                <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 mb-10">
+               <div className={`text-[13px] font-black tracking-widest uppercase mb-8 transition-colors duration-300 ${
+  isListening 
+    ? 'text-purple-600 animate-pulse' 
+    : isCompleted 
+      ? 'text-green-600' 
+      : 'text-orange-500'
+}`}>
+  {isSpeaking ? 'AI Voice' : isListening ? 'Listening' : isCompleted ? 'Success!' : 'Ready'}
+</div>
+               <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 mb-10">
                   {displayWords.map((word, idx) => (
                     <span key={idx} className={`text-2xl md:text-3xl font-black transition-all duration-300 ${matchedIndices.has(idx) ? 'text-blue-700' : 'text-slate-300'}`}>{word}</span>
                   ))}
